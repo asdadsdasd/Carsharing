@@ -20,9 +20,12 @@
 <form action="/car/create" method="post">
     Название машины: <input type="text" name="name"/><br><br>
     Бренд машины: <input type="text" name="brand"/><br><br>
+    Номер в реестре <input type="text" name="stateNumber"/><br><br>
     Количество мест: <input type="number" name="seat"/><br><br>
     Год выпуска: <input type="text" name="productionYear"/><br><br>
+    Год покупки: <input type="date" name="purchaseDate"/><br><br>
     Цена покупки: <input type="number" name="purchasePrice"/><br><br>
+    Статус: <input type="text" name="status"/><br><br>
     <input type="submit" value="Добавить машину"/>
 </form>
 </body>

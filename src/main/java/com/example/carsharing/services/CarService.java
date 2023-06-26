@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,8 +16,8 @@ public class CarService {
     private long id = 0;
     private List<Car> cars = new ArrayList<>();
     {
-        cars.add(new Car(++id, "RAV4", "Toyota", 5, 2019, 1500000));
-        cars.add(new Car(++id, "JUK", "Nissan", 2, 2013, 900000));
+        cars.add(new Car(++id, "RAV4", "Toyota", "BH459T", 5, 2019, new Date(2020, 02, 23), 1500000, "Свободна"));
+        cars.add(new Car(++id, "JUK", "Nissan", "EM202P",2, 2013, new Date(2019, 11, 8), 900000, "В работе"));
     }
 
     public List<Car> listCars() {
