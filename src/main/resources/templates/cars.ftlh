@@ -6,10 +6,10 @@
 <body>
 <H1>CARSHARING</H1><hr>
 <h4>Доступные машины</h4>
-<form action="/" method="get">
+<#--<form action="/" method="get">
     Поиск по транспорта по марке: <input type="text" name="brand"><br>
     <input type="submit" value="Поиск">
-</form>
+</form>-->
 <#list cars as car>
     <div>
         <p><b>${car.name}</b> ${car.purchasePrice} руб. | <a href="/car/${car.id}">Подробнее...</a> </p>
@@ -22,7 +22,6 @@
     Бренд машины: <input type="text" name="brand"/><br><br>
     Количество мест: <input type="number" name="seat"/><br><br>
     Год выпуска: <input type="text" name="productionYear"/><br><br>
-    Год покупки: <input type="text" name="purchaseDate"/><br><br>
     Цена покупки: <input type="number" name="purchasePrice"/><br><br>
     <input type="submit" value="Добавить машину"/>
 </form>

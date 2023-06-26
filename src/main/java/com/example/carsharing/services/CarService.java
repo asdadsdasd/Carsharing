@@ -1,7 +1,7 @@
 package com.example.carsharing.services;
 
 import com.example.carsharing.models.Car;
-import com.example.carsharing.repositories.VehicleRepository;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -11,26 +11,31 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-@Slf4j
-@RequiredArgsConstructor
 public class CarService {
-    private final VehicleRepository vehicleRepository;
+    private long id = 0;
+    private List<Car> cars = new ArrayList<>();
+    {
+        cars.add(new Car(++id, "RAV4", "Toyota", 5, 2019, 1500000));
+        cars.add(new Car(++id, "JUK", "Nissan", 2, 2013, 900000));
+    }
 
-    public List<Car> listCars(String brand) {
-        if (brand != null) vehicleRepository.findByBrand(brand);
-        return vehicleRepository.findAll();
+    public List<Car> listCars() {
+        return cars;
     }
 
     public void saveCar(Car car){
-        log.info("Saving new {}", car);
-        vehicleRepository.save(car);
+        car.setId(++id);
+        cars.add(car);
     }
 
     public void deleteCar(Long id){
-        vehicleRepository.deleteById(id);
+        cars.removeIf(car -> car.getId().equals(id));
     }
 
     public Car getCarById(Long id) {
-        return vehicleRepository.findById(id).orElse(null);
+        for(Car car : cars){
+            if (car.getId().equals(id)) return car;
+        }
+        return  null;
     }
 }

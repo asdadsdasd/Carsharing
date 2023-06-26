@@ -10,7 +10,6 @@
 <b>Бренд машины: </b>${car.brand}<br>
 <b>Количество мест: </b>${car.seat}<br>
 <b>Год выпуска: </b>${car.productionYear}<br>
-<b>Год покупки: </b>${car.purchaseDate}<br>
 <b>Цена покупки: </b>${car.purchasePrice}<br>
 <hr>
 
