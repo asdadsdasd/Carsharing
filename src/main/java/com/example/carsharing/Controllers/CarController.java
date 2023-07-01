@@ -16,8 +16,8 @@ public class CarController {
     private final CarService carService;
 
     @GetMapping("/")
-    public String cars(Model model) {
-        model.addAttribute("cars", carService.listCars());
+    public String cars(@RequestParam(name = "brand", required = false) String brand, Model model) {
+        model.addAttribute("cars", carService.listCars(brand));
         return "cars";
     }
 
