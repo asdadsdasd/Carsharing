@@ -4,7 +4,7 @@
     <title>CARSHARING</title>
 </head>
 <body>
-<H1>CARSHARING</H1><hr>
+<H1>CARSHARING | <a href="/login">Войти</a></H1><br>
 <h4>Доступные машины</h4>
 <form action="/" method="get">
     Поиск по транспорта по марке: <input type="text" name="brand"><br>
